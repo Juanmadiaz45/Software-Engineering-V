@@ -10,7 +10,7 @@ Before running the Jenkins controller, create a Docker network named `jenkins`.
 docker network create jenkins
 ```
 
-![image.png](attachment:b1e5e42c-7e01-4b67-82d5-6460f170b8ac:image.png)
+![image](https://github.com/user-attachments/assets/69921c55-e478-48c3-8a3d-3b9a83055e1c)
 
 **Step 2: Run Jenkins Controller in Docker**
 
