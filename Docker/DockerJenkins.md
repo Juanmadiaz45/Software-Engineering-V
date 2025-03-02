@@ -32,7 +32,7 @@ docker run \
   --storage-driver overlay2
 ```
 
-![image.png](attachment:046f84ca-5171-42e4-ad9a-88199b688910:image.png)
+![image](https://github.com/user-attachments/assets/3458c941-9557-4e7d-8e2e-a2678966dda6)
 
 **Step 3: Create a Dockerfile for Jenkins**
 
@@ -42,9 +42,9 @@ Create a Dockerfile to customize the Jenkins image. The Dockerfile installs Dock
 nano Dockerfile
 ```
 
-![image.png](attachment:d74457de-3a58-444f-b529-c6f3ca284bb5:image.png)
+![image](https://github.com/user-attachments/assets/c076a983-e121-44f5-ae77-dd453a7c21c0)
 
-![image.png](attachment:60e257c0-f3f6-463d-bd9b-c24c9f35ae18:image.png)
+![image](https://github.com/user-attachments/assets/606f89b8-a5af-4cfb-b03c-039f59ac745d)
 
 **Step 4: Build and Run the Jenkins Image**
 
@@ -54,7 +54,7 @@ Build the Jenkins image using the Dockerfile and run it.
 docker build -t myjenkins-blueocean:2.492.1-1
 ```
 
-![image.png](attachment:851599ad-2587-4038-b4ba-562cf4605298:image.png)
+![image](https://github.com/user-attachments/assets/c2633ba0-fb75-4038-aabe-f8fcf716e954)
 
 ```bash
 docker run \
@@ -80,15 +80,15 @@ docker exec jenkins-blueocean cat /var/jenkins_home/secrets/initialAdminPassword
 
 After running the Jenkins container, you need to unlock it using the initial admin password. The password can be found in the Jenkins logs or in the file `/var/jenkins_home/secrets/initialAdminPassword`.
 
-![image.png](attachment:71741365-0a48-4659-9518-375543ff5b47:image.png)
+![image](https://github.com/user-attachments/assets/b515d73b-3464-43bb-9151-cdbf9c0cd40d)
 
-![image.png](attachment:80b5da07-a104-4da7-b555-4cabc73715bf:image.png)
+![image](https://github.com/user-attachments/assets/d8fc3b25-1187-4322-8952-9a9a52f39725)
 
-![image.png](attachment:e4ec5165-44f1-4531-b501-7d75b284d0dc:image.png)
+![image](https://github.com/user-attachments/assets/860be3c5-a8b9-4fca-b7d5-0ce3b81fc0cf)
 
-![image.png](attachment:197c07bf-7e82-45b0-ba4a-2b080911827a:image.png)
+![image](https://github.com/user-attachments/assets/558172bf-2eff-4bb6-a735-3a4c91b8066f)
 
-![image.png](attachment:88ab79b7-fa32-45b8-9dfb-d1f638b5f7ff:image.png)
+![image](https://github.com/user-attachments/assets/1a6e20b3-80cc-49d4-bc7d-a7e5e2206f11)
 
 **Part 2: Setting Up a Jenkins Agent**
 
@@ -100,23 +100,23 @@ Generate SSH keys to authenticate the Jenkins agent.
 ssh-keygen -f ~/.ssh/jenkins_agent_key
 ```
 
-![image.png](attachment:1fc8a7fd-1a1f-4cc9-9c0e-b7d660b851da:image.png)
+![image](https://github.com/user-attachments/assets/841cd8a1-3f33-4e6d-8627-463230b0d508)
 
 **Step 2: Add the SSH Key to Jenkins Credentials**
 
 Add the generated SSH public key to Jenkins credentials. Go to **Jenkins Dashboard > Manage Jenkins > Credentials** and add a new SSH credential.
 
-![image.png](attachment:8b15f4aa-65f4-4d10-8a43-c4c0ea9c93a2:image.png)
+![image](https://github.com/user-attachments/assets/a30c92f4-76e3-4b9f-96d2-628fce40314d)
 
-![image.png](attachment:95a1bcc4-f6fc-415e-9f06-1e4cf320a7d3:image.png)
+![image](https://github.com/user-attachments/assets/d9e1a314-281a-4b61-a8d9-2a505b720300)
 
 ```bash
 cat ~/.ssh/jenkins_agent_key
 ```
 
-![image.png](attachment:80a61c2a-677a-4453-b013-0ab33d735389:image.png)
+![image](https://github.com/user-attachments/assets/2a51a7e0-e55e-4177-aa12-6544cc562fa1)
 
-![image.png](attachment:53fc8156-0adb-489b-90da-787640ea8797:image.png)
+![image](https://github.com/user-attachments/assets/0293afca-6702-40ae-8298-b90f007008e8)
 
 **Step 3: Run the Jenkins Agent in Docker**
 
@@ -132,19 +132,19 @@ docker run -d --rm --name=agent1 -p 22:22 \
 jenkins/ssh-agent:alpine-jdk17
 ```
 
-![image.png](attachment:32f8a211-5b68-4181-ad7d-f0c146eb01ae:image.png)
+![image](https://github.com/user-attachments/assets/02721e39-037a-41ab-b5db-215dc7238430)
 
-![image.png](attachment:b239466a-dba2-4c50-a8a3-6ee47d0750cd:image.png)
+![image](https://github.com/user-attachments/assets/8b20e490-c850-41f1-af68-957f4e0b392a)
 
 **Step 5: Fill in the information in Jenkins to start and connect the agent, it is important to put the container's IP in the host**
 
-![image.png](attachment:c777f019-1b6c-4dbb-9c35-51921007bb3f:image.png)
+![image](https://github.com/user-attachments/assets/744c9020-ba04-4adc-9d92-50e05ac95e81)
 
-![image.png](attachment:b1ac0417-910c-4dd2-8ee4-0263aa3d8813:image.png)
+![image](https://github.com/user-attachments/assets/6a5f02e4-84a2-4db9-8750-8426be4303b0)
 
-![image.png](attachment:d2734502-2f47-4b32-80ac-6bbe03300aaf:image.png)
+![image](https://github.com/user-attachments/assets/d5bd82fb-bbc8-43bb-b70d-718160fe8465)
 
-![image.png](attachment:02c59881-b833-4308-9b24-49bfac2239df:image.png)
+![image](https://github.com/user-attachments/assets/a656cd45-c4d1-48ed-9e66-7363cc93184b)
 
 **Part 3: Creating and Configuring Jenkins Pipelines**
 
@@ -199,15 +199,15 @@ pipeline {
 }
 ```
 
-![image.png](attachment:29f6d283-2706-48a7-a640-1b340c635c0c:image.png)
+![image](https://github.com/user-attachments/assets/1b857531-4248-492b-9709-a4e3bca8b01b)
 
-![image.png](attachment:570e6df9-80fb-4dde-b930-ef1854fadb7d:image.png)
+![image](https://github.com/user-attachments/assets/922d8665-9043-4404-8513-61b1ecd3a702)
 
 **Step 2: Modify the Pipeline to Check for Existing Project**
 
 Modify the pipeline to check if the project folder exists. If it does, delete it before cloning the repository.
 
-![image.png](attachment:84a93a6b-9a51-46c6-954f-e8dc858f2323:image.png)
+![image](https://github.com/user-attachments/assets/e3bd1032-55c4-4eea-a279-b23e96df6f46)
 
 ```groovy
 pipeline {
@@ -266,9 +266,9 @@ pipeline {
 }
 ```
 
-![image.png](attachment:ff946b9a-0eb9-4c23-b1b1-73b9f28fd1b8:image.png)
+![image](https://github.com/user-attachments/assets/cf7bf6a2-4c65-479e-8826-66c1a368ecbe)
 
-![image.png](attachment:db65c710-8ff3-433b-af0c-fbab6a89a100:image.png)
+![image](https://github.com/user-attachments/assets/aaf5a990-fc1f-40ff-84d1-2165860fd8d5)
 
 **Step 3: Add a Branch Parameter**
 
@@ -356,17 +356,17 @@ pipeline {
 }
 ```
 
-![image.png](attachment:0bcacaf9-6cda-4cf0-9a13-2be2cb3abe27:image.png)
+![image](https://github.com/user-attachments/assets/9878af03-0b20-4d0a-8ce0-fe569c2daee9)
 
 **Step 4: Modify the Clone Stage to Use the Selected Branch**
 
 Modify the clone stage to use the selected branch.
 
-![image.png](attachment:415bfa7c-e548-4ea0-be93-da364d27d7ae:image.png)
+![image](https://github.com/user-attachments/assets/40d4250d-8510-401b-9332-23176832af7d)
 
-![image.png](attachment:fd02b303-b7b3-40b1-8ffc-4647217c618c:image.png)
+![image](https://github.com/user-attachments/assets/a638fb73-56ef-4361-9e98-105f6a55077e)
 
-![image.png](attachment:35636996-7934-4326-b9df-9710e3408450:image.png)
+![image](https://github.com/user-attachments/assets/8b23e746-6ce9-4a3c-96a7-ea46c05ab3aa)
 
 ```groovy
 pipeline {
@@ -463,16 +463,16 @@ pipeline {
 
 Now, we can select the branch.
 
-![image.png](attachment:7523c9fe-b906-471e-841a-3e074972b5b7:image.png)
+![image](https://github.com/user-attachments/assets/f3f47824-c8cf-4b8c-b040-997f5400681b)
 
 **Step 5: Move the Pipeline Script to an External File**
 
 Move the pipeline script to an external file (`Jenkinsfile`) and reference it in the pipeline configuration.
 
-![image.png](attachment:1ba8cd4d-074c-4bb7-b34c-fe78fcba840f:image.png)
+![image](https://github.com/user-attachments/assets/3e3739c9-7261-4045-bfe2-65ffc4eff0df)
 
-![image.png](attachment:9be5f3d2-60fd-414c-bdc1-a301f1593eb2:image.png)
+![image](https://github.com/user-attachments/assets/50aca50b-3806-46e8-a648-dd4e6246715b)
 
-![image.png](attachment:964c05e3-e1ba-425d-b2e1-2793dfc0db6d:image.png)
+![image](https://github.com/user-attachments/assets/a50d7209-4e83-4e6b-927d-97ee99cd42cf)
 
-![image.png](attachment:b998bf9e-cd50-49f4-8af1-1230dc47dddf:image.png)
+![image](https://github.com/user-attachments/assets/1607d5aa-884f-4bd6-83d0-e55732451816)
