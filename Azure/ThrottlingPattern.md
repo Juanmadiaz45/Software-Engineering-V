@@ -190,8 +190,8 @@ npm install -g artillary
 
 Configuration file for an Artillery load test, specifying the API endpoint, request headers, and test phases.
 
-![image.png](attachment:b27400e5-111c-4928-8db2-39ceeaef40d9:image.png)
+![image](https://github.com/user-attachments/assets/5b645aac-0754-41db-9177-b3b1c137ea50)
 
 Execution of the Artillery test, sending multiple requests to evaluate API throttling behavior.
 
-![image.png](attachment:0346893f-5d1e-48e5-a774-814f60e21792:image.png)
+![image](https://github.com/user-attachments/assets/ec60b6bd-2607-42fc-b939-ab26a52cb26d)
