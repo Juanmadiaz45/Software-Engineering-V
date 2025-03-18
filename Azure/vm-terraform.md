@@ -17,7 +17,7 @@ The project consists of the following files:
 This file contains the definition of the Azure resources to be created. Below is a description of each section:
 
 Provider: Configures the Azure provider (azurerm).
-```
+```hcl
 provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
@@ -25,7 +25,7 @@ provider "azurerm" {
 ```
 
 Resource Group: Creates a resource group in Azure.
-```
+```hcl
 resource "azurerm_resource_group" "myfirtsvmrg" {
   name     = var.resource_group_name
   location = var.location
@@ -34,7 +34,7 @@ resource "azurerm_resource_group" "myfirtsvmrg" {
 
 
 Virtual Network: Defines a virtual network within the resource group.
-```
+```hcl
 resource "azurerm_virtual_network" "myfirtsvmvnet" {
   name                = "myfirtsvmvnet"
   address_space       = var.vnet_address_space
@@ -44,7 +44,7 @@ resource "azurerm_virtual_network" "myfirtsvmvnet" {
 ```
 
 Subnet: Creates a subnet within the virtual network.
-```
+```hcl
 resource "azurerm_subnet" "myfirtsvmsubnet" {
   name                 = "myfirtsvmsubnet"
   resource_group_name  = azurerm_resource_group.myfirtsvmrg.name
@@ -54,7 +54,7 @@ resource "azurerm_subnet" "myfirtsvmsubnet" {
 ```
 
 Public IP: Assigns a public IP address to the VM.
-```
+```hcl
 resource "azurerm_public_ip" "myfirtsvmpublicip" {
   name                = "myfirtsvmpublicip"
   location            = azurerm_resource_group.myfirtsvmrg.location
@@ -64,7 +64,7 @@ resource "azurerm_public_ip" "myfirtsvmpublicip" {
 ```
 
 Network Interface: Creates a network interface for the VM.
-```
+```hcl
 resource "azurerm_network_interface" "myfirtsvmnic" {
   name                = "myfirtsvmnic"
   location            = azurerm_resource_group.myfirtsvmrg.location
@@ -80,7 +80,7 @@ resource "azurerm_network_interface" "myfirtsvmnic" {
 ```
 
 Network Security Group: Defines a network security group to control inbound and outbound traffic.
-```
+```hcl
 resource "azurerm_network_security_group" "myfirtsvmsg" {
   name                = "myfirtsvmsg"
   location            = azurerm_resource_group.myfirtsvmrg.location
@@ -101,7 +101,7 @@ resource "azurerm_network_security_group" "myfirtsvmsg" {
 ```
 
 Network Interface Security Group Association: Associates the network security group with the network interface.
-```
+```hcl
 resource "azurerm_network_interface_security_group_association" "myfirtsvmnicnsg" {
   network_interface_id      = azurerm_network_interface.myfirtsvmnic.id
   network_security_group_id = azurerm_network_security_group.myfirtsvmsg.id
@@ -109,7 +109,7 @@ resource "azurerm_network_interface_security_group_association" "myfirtsvmnicnsg
 ```
 
 Virtual Machine: Creates the virtual machine.
-```
+```hcl
 resource "azurerm_linux_virtual_machine" "my-firts-vm" {
   name                = var.vm_name
   resource_group_name = azurerm_resource_group.myfirtsvmrg.name
@@ -140,7 +140,7 @@ resource "azurerm_linux_virtual_machine" "my-firts-vm" {
 
 ### variables.tf
 This file defines the variables used in the Terraform configuration.
-```
+```hcl
 variable "subscription_id" {
   description = "Azure Subscription ID"
   type        = string
@@ -198,7 +198,7 @@ variable "subnet_address_prefix" {
 ### terraform.tfvars
 This file provides specific values for the variables defined in variables.tf.
 
-```
+```hcl
 subscription_id = "c7a952cf-eff5-49e9-bed2-4d028efede40"
 location        = "West Europe"
 admin_username  = "adminuser"
@@ -208,34 +208,39 @@ admin_password  = "Password@123"
 ## Deployment
 ### Initialization
 Run the following command to initialize the Terraform working directory:
-```
+```hcl
 terraform init
 ```
 
 ### Validation
 Validate the configuration with the following command:
-```
+```hcl
 terraform validate
 ```
 
 ### Planning
 Generate an execution plan to review the changes Terraform will apply:
-```
+```hcl
 terraform plan
 ```
 
 ### Application
 Apply the configuration to create the resources in Azure:
-```
+```hcl
 terraform apply
 ```
 Terraform will display a summary of the resources to be created. Confirm the action by typing yes.
 
 ### Cleanup
 To remove all created resources, run:
-```
+```hcl
 terraform destroy
 ```
 This will delete all resources defined in the Terraform configuration.
 
 ## Evidence
+
+![image](https://github.com/user-attachments/assets/eba7d093-5bd0-4dee-9daa-5935126016a4)
+
+![image](https://github.com/user-attachments/assets/14993824-4d70-4e19-8ddc-c69dc18018ae)
+
