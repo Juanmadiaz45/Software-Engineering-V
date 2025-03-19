@@ -199,7 +199,7 @@ variable "subnet_address_prefix" {
 This file provides specific values for the variables defined in variables.tf.
 
 ```hcl
-subscription_id = "c7a952cf-eff5-49e9-bed2-4d028efede40"
+subscription_id = "id"
 location        = "West Europe"
 admin_username  = "adminuser"
 admin_password  = "Password@123"
@@ -240,7 +240,7 @@ This will delete all resources defined in the Terraform configuration.
 
 ## Evidence
 
-![image](https://github.com/user-attachments/assets/eba7d093-5bd0-4dee-9daa-5935126016a4)
+![image](https://github.com/user-attachments/assets/bf584e6f-5811-479b-8431-5712e4b7e7f8)
 
-![image](https://github.com/user-attachments/assets/14993824-4d70-4e19-8ddc-c69dc18018ae)
+![image](https://github.com/user-attachments/assets/0214041e-1650-4983-9b32-a2b75dde6137)
 
