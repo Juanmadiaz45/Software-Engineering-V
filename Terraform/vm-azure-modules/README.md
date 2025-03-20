@@ -90,3 +90,7 @@ terraform destroy
 This will delete all resources defined in the Terraform configuration.
 
 ## Evidence
+
+![image](https://github.com/user-attachments/assets/76d9b7f0-c5bd-488c-a8ce-1e02cf67ee0f)
+
+![image](https://github.com/user-attachments/assets/9d408223-666e-4d6f-a961-0b961141232f)
