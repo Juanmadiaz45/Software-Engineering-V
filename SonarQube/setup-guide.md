@@ -1,4 +1,4 @@
-# SonarQube Integration with GitHub Actions - Complete Documentation
+# SonarQube Integration with GitHub Actions
 
 ## 1. Introduction
 
