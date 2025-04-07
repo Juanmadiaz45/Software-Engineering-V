@@ -36,7 +36,10 @@ To allow GitHub Actions to communicate with our SonarQube instance:
   - **Port range**: 9000  
   - **Priority**: 310  
   - **Name**: sonarqube-access  
-- Save the rule - this will allow traffic to reach our SonarQube instance  
+- Save the rule - this will allow traffic to reach our SonarQube instance
+
+![image](https://github.com/user-attachments/assets/f9f63e3b-9af5-4211-8d83-a97a1714435d)
+
 
 ### Installing Docker and Docker Compose
 
@@ -116,7 +119,11 @@ volumes:
 
 - Start the containers  
 - Verify it's running  
-- Access the web interface at `http://[OUR_VM_IP]:9000`  
+- Access the web interface at `http://[OUR_VM_IP]:9000`
+
+![image](https://github.com/user-attachments/assets/06d0f0e5-9b85-4917-a95d-76bd6f9ca648)
+
+![image](https://github.com/user-attachments/assets/177d64df-003e-4347-a0d9-d491a1716c33)
 
 ### Configuring SonarQube for GitHub Integration
 
@@ -216,7 +223,14 @@ jobs:
       with:
         name: test-results  # Artifact name
         path: target/surefire-reports  # Test report directory
-``` 
+```
+![image](https://github.com/user-attachments/assets/f1d9ff5b-ea28-4ea1-be9b-bf45f7117cdb)
+
+![image](https://github.com/user-attachments/assets/588547a9-0cfc-406f-903e-3291409acc0b)
+
+![image](https://github.com/user-attachments/assets/6bfccd47-d80e-48e0-a35c-80db9c5e58f3)
+
+![image](https://github.com/user-attachments/assets/8fe1bf43-0751-4ca8-950f-add62a842728)
 
 ## 4. Conclusions
 
